@@ -1,0 +1,7 @@
+<h3>{{title}}</h3>
+<ol>
+  <li ng-repeat="item in found">
+      {{item.name}}
+    <button type="button" class="btn btn-danger btn-sm" ng-click="onRemove({index: $index})">Don't want this one</button>
+  </li>
+</ol>
