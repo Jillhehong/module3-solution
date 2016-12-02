@@ -24,10 +24,10 @@
     NarrowItDownController.$inject = ['MenuSearchService'];
     function NarrowItDownController(MenuSearchService) {
         var list = this;
-        list.found = [];
         list.getItems = function (search) {
             var promise = MenuSearchService.getMatchedMenuItems();
             promise.then(function (result) {
+                list.found = [];
                 var response = result.data;
                 //convert from object to array
                 var response_array = response.menu_items;
@@ -38,7 +38,7 @@
                         list.found.push(item);
                     }
                 } // end loop
-                if(list.found && search) { list.title = 'A list of found menu items';}
+                if(list.found.length && search) { list.title = 'A list of found menu items';}
                 else { list.title="Nothing found!";}
             });
         };
