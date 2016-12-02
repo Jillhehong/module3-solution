@@ -11,7 +11,7 @@
     //directives
     function foundItems() {
         var ddo = {
-            templateUrl:'menuItems.html',
+            templateUrl:'directive/menuItems.html',
             scope: {
                 title: '@',
                 found: '<', //one-way binding
